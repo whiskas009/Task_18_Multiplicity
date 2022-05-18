@@ -10,25 +10,28 @@ namespace Task_18_Multiplicity
     {
         static void Main(string[] args)
         {
-            int lowlimit = 100;
-            int highlimit = 1000;
+            int lowlimitMultiples = 100;
+            int highlimitMultiples = 1000;
             int numbersMultiples = 0;
 
-            Random random = new Random();
-            int N = random.Next(1, 27);
+            int lowDiapasoneDivider = 1;
+            int highDiapasoneDivider = 28;
 
-            while (lowlimit != highlimit)
+            Random random = new Random();
+            int N = random.Next(lowDiapasoneDivider, highDiapasoneDivider);
+
+            while (lowlimitMultiples != highlimitMultiples)
             {
                 int temporarySum = 0;
-                for (int i = 0; i < lowlimit; i += N)
+                for (int i = 0; i < lowlimitMultiples; i += N)
                 {
                     temporarySum += N;
                 }
 
-                if (temporarySum == lowlimit)
+                if (temporarySum == lowlimitMultiples)
                     numbersMultiples++;
 
-                lowlimit++;
+                lowlimitMultiples++;
             }
 
             Console.WriteLine(numbersMultiples);
